@@ -103,8 +103,11 @@ const HomePage = () => {
           </div>
 
           <h3>{item.title}</h3>
+          <div className='flexbox'>
           <p>{item.price}</p>
           <button id={item.id}>add items</button>
+          </div>
+
         </div>
       ))}
     </div>

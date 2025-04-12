@@ -1,3 +1,11 @@
+.flexbox{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+}
 
 h2{
     width: 94%;
@@ -12,8 +20,7 @@ h2{
     place-self: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin: 5px;
+    gap: 1.9rem;
     padding: 1%;
   }
   
@@ -49,8 +56,6 @@ h2{
     }
   
     p {
-      padding-left: 5%;
-      margin: 0.3rem;
       font-size: 1rem;
       color: #666;
     }
@@ -61,7 +66,6 @@ h2{
         border-radius: 20px;
         font-size: 13px;
         background-color: #ffd814;
-        margin-bottom: 20px;
         cursor: pointer;
 
         &:hover{
