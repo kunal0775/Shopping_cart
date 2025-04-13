@@ -1,14 +1,24 @@
+'use client';
+
 import React from 'react';
-import '../../styling/components/navbar.scss';
+import '../styling/components/navbar.scss';
 import { FaSearch } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 
 const NavBar = () => {
+  const router = useRouter(); // Next.js Router Hook
+
+  // Function to handle navigation
+  const navigateTo = (path) => {
+   router.push(path);
+};
+
   return (
     <div className='nav-container'>
         <div className='nav-box'>
 
                 {/* Shopping logo */}
-            <img width="4%" src="shopify.png" alt=" " />
+            <img onClick={() => navigateTo('home')} width="4%" src="shopify.png" alt=" "/>
 
                 {/* Search Input */}
                 <div className='input-box'>
@@ -18,7 +28,7 @@ const NavBar = () => {
 
                 {/* Cart logo */}
             <div className='flexBox'>
-                <img width="40%" src="icon-cart.png" alt=" " />
+                <img width="40%" src="icon-cart.png" alt=" " onClick={() => navigateTo('/cart-page')}/>
                 <p>Cart</p>
             </div>
         </div>

@@ -1,10 +1,9 @@
-.flexbox{
+.flex-content{
     display: flex;
     justify-content: space-between;
     padding-left: 5%;
     padding-right: 5%;
-    margin-top: 0.3rem;
-    margin-bottom: 1rem;
+    margin: 0.3rem;
 }
 
 h2{
@@ -60,12 +59,13 @@ h2{
       color: #666;
     }
 
-    button{
+    .add-button{
         margin-left: 5%;
         padding: 3px 8px 3px 8px;
         border-radius: 20px;
         font-size: 13px;
         background-color: #ffd814;
+        margin-bottom: 20px;
         cursor: pointer;
 
         &:hover{
