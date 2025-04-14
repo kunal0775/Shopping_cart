@@ -1,6 +1,11 @@
 .flexBox{
     display: flex;
     place-items: center;
+    cursor: pointer;
+}
+
+.logo-pointer{
+     cursor: pointer;
 }
 
 .nav-container{

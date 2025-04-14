@@ -18,7 +18,7 @@ const NavBar = () => {
         <div className='nav-box'>
 
                 {/* Shopping logo */}
-            <img onClick={() => navigateTo('home')} width="4%" src="shopify.png" alt=" "/>
+            <img className='logo-pointer' onClick={() => navigateTo('home')} width="4%" src="shopify.png" alt=" "/>
 
                 {/* Search Input */}
                 <div className='input-box'>
