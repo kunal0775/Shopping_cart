@@ -1,5 +1,6 @@
 import "./globals.css";
 import NavBar from "./components/navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const metadata = {
   title: "Shopping Cart",
