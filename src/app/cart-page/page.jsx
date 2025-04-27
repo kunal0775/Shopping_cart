@@ -14,9 +14,13 @@ const initialData = [
     },
 ];
 
-const calculateTotal = () => {
-  return initialData.reduce((sum, item) => sum + item.price * item.order_qty, 0);
-};
+function getTotalAmount() {
+  let total = 0;
+  for (let i = 0; i < initialData.length; i++) {
+    total += initialData[i].price * initialData[i].order_qty;
+  }
+  return total;
+}
 
 const CartPage = () => {
   const [cardData, setCardData] = useState(initialData);
@@ -44,18 +48,6 @@ const CartPage = () => {
     }
     );
   }
-
-  // const handlePrice = (e) => {
-  //   setCardData((prevData) => {
-  //     return prevData.map((item) => {
-  //       if (item.id === parseInt(e.target.id)) {
-  //         return { ...item, price: item.price * item.order_qty};
-  //       }
-  //       return item;
-  //     });
-  //   }
-  //   );
-  // }
 
   const handleDecrement = (e) => {
     setCardData((prevData) => {
@@ -94,14 +86,14 @@ const CartPage = () => {
                   <button id={item.id} onClick={handleIncrement}>+</button>
               </div>
             </div>
-            <p className='price'>{item.price}</p>
+            <p className='price'>₹ {item.price}</p>
         </div>
         </div>
 
       ))}
     </div>
                 <div className='buy-box'>
-                    <p ><b>Subtotal (1 item):</b> ₹{calculateTotal()}</p>
+                    <p ><b>Subtotal (1 item):</b> ₹{getTotalAmount()}</p>
                     <button className='buy-button'>Proceed to buy</button>
                 </div>
     </div>
