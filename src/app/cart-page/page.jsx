@@ -12,6 +12,14 @@ const initialData = [
       price: 684,
       order_qty:2,
     },
+    {
+      id: 2,
+      title: "Formal white shirt",
+      image: "https://m.media-amazon.com/images/I/61idJrfaIRL._AC_UL480_QL65_.jpg",
+      size: "Large",
+      price: 684,
+      order_qty:4,
+    },
 ];
 
 function getTotalAmount() {
@@ -20,6 +28,13 @@ function getTotalAmount() {
     total += initialData[i].price * initialData[i].order_qty;
   }
   return total;
+}
+function getTotalItems() {
+  let totalItems = 0;
+  for (let i = 0; i < initialData.length; i++) {
+    totalItems += initialData[i].order_qty;
+  }
+  return totalItems;
 }
 
 const CartPage = () => {
@@ -62,18 +77,18 @@ const CartPage = () => {
   }
   return (
     <div>
-         
-    <div className='flexbox'>
+    {cardData.map((item) => (
+      <div key={item.id} className='flexbox'>
         <div className="shopping-card-container">
-            {cardData.map((item) => (
-        <div key={item.id} className="shopping-box">
+        {item.order_qty>=1?
+          <div  className="shopping-box">
         
                 <div className='flexbox'>
                     <p>Shopping Cart</p>
                     <p>Price</p>
                 </div>
                 <hr/>
-        <div className='flexbox'>
+          <div className='flexbox'>
             <img className='img3s' src={item.image} alt={item.title} />
 
             <div>
@@ -89,15 +104,17 @@ const CartPage = () => {
             <p className='price'>₹ {item.price}</p>
         </div>
         </div>
-
-      ))}
-    </div>
+        :<div></div>}
+      </div>
                 <div className='buy-box'>
-                    <p ><b>Subtotal (1 item):</b> ₹{getTotalAmount()}</p>
+                    <p ><b>Subtotal ({getTotalItems()} item):</b> ₹{getTotalAmount()}</p>
                     <button className='buy-button'>Proceed to buy</button>
                 </div>
+
     </div>
+    ))}
     </div>
+    
   )
 }
 
